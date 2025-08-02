@@ -5,12 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --env-file=.env  script.js"
   },
   "repository": {
     "type": "git",
     "url": "nodejs-files"
   },
   "author": "Oluwaseun Sodeeq",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
