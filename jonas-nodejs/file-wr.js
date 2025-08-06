@@ -16,12 +16,12 @@ fs.writeFileSync("./1-node-farm/starter/txt/output.txt", textOut);
 console.log("File written successfully!");
 
 // Non-blocking codes ( Asynchronous)
-fs.readFile("./1-node-farm/starter/txt/start.txt", "utf-8", (err, data) => {
-    fs.readFile(`./1-node-farm/starter/txt/${data}.txt`, "utf-8", (err, data2) => {
+fs.readFile("./node-farm/starter/txt/start.txt", "utf-8", (err, data) => {
+    fs.readFile(`./node-farm/starter/txt/${data}.txt`, "utf-8", (err, data2) => {
         console.log(data2);
-        fs.readFile("./1-node-farm/starter/txt/append.txt", "utf-8", (err, data3) => {
+        fs.readFile("./node-farm/starter/txt/append.txt", "utf-8", (err, data3) => {
             const textOut = `This is what we know about the avocado: ${data2}.\nCreated on ${Date.now()}`;
-            fs.writeFile("./1-node-farm/starter/txt/output.txt", textOut, (err) => {
+            fs.writeFile("./node-farm/starter/txt/output.txt", textOut, (err) => {
                 console.log("File written successfully!");
             });
         });
