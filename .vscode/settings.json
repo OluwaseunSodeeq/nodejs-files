@@ -1,11 +1,16 @@
 {
-    "cSpell.words": [
-        "Brussel",
-        "Hass",
-        "Natours",
-        "Oluwaseun",
-        "PRODUCTNAME",
-        "Sodeeq",
-        "traversy"
-    ]
+  "cSpell.words": [
+    "Brussel",
+    "Hass",
+    "Natours",
+    "Oluwaseun",
+    "PRODUCTNAME",
+    "Sodeeq",
+    "traversy",
+    "usershandlers"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.formatOnSave.enabled": true
 }

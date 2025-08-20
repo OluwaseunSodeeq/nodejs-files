@@ -17,7 +17,7 @@ server.on('request', (req, res) => {
     readable = fs.createReadStream('test-file-large.txt');
 
     // File not found! for the below
-    // readable = fs.createReadStream('test-file-largeee.txt');
+    // readable = fs.createReadStream('test-file-large.txt');
     readable.on('data', (chunk) => {
         res.write(chunk);
     });
