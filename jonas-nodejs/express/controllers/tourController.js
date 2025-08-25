@@ -23,12 +23,12 @@ function getTourById(req, res) {
   const newId = Number(req.params.id) + 1;
   console.log(newId, tours.length);
 
-  if (newId > tours.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Invalid ID",
-    });
-  }
+  // if (newId > tours.length) {
+  //   return res.status(404).json({
+  //     status: "fail",
+  //     message: "Invalid ID",
+  //   });
+  // }
 
   res.status(200).json({
     status: "success",
@@ -60,12 +60,12 @@ function updateTour(req, res) {
   const id = Number(req.params.id);
   const tour = tours.find((tour) => tour.id === id);
 
-  if (!tour) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Tour not found",
-    });
-  }
+  // if (!tour) {
+  //   return res.status(404).json({
+  //     status: "fail",
+  //     message: "Tour not found",
+  //   });
+  // }
 
   const updatedTour = Object.assign(tour, req.body);
 
@@ -85,12 +85,12 @@ function deleteTour(req, res) {
   const id = Number(req.params.id);
   const tourIndex = tours.findIndex((tour) => tour.id === id);
 
-  if (tourIndex === -1) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Tour not found",
-    });
-  }
+  // if (tourIndex === -1) {
+  //   return res.status(404).json({
+  //     status: "fail",
+  //     message: "Tour not found",
+  //   });
+  // }
 
   tours.splice(tourIndex, 1);
 
@@ -106,4 +106,33 @@ function deleteTour(req, res) {
   );
 }
 
-export { getTourById, getAllTours, createTour, updateTour, deleteTour };
+const checkID = (req, res, next, val) => {
+  console.log(`Tour id is: ${val}`);
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+  next();
+};
+
+const checkBody = (res, req, next) => {
+  if (req.body.name || req.body.price) {
+    return res.status(400).json({
+      status: "fail",
+      message: "Missing name or price",
+    });
+  }
+  next();
+};
+
+export {
+  getTourById,
+  getAllTours,
+  createTour,
+  updateTour,
+  deleteTour,
+  checkID,
+  checkBody,
+};
