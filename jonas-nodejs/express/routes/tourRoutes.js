@@ -6,6 +6,7 @@ import {
   updateTour,
   deleteTour,
   checkID,
+  checkBody,
 } from "../controllers/tourController.js";
 
 // Create router
@@ -18,8 +19,8 @@ router.param("id", (req, res, next, val) => {
 });
 
 // Define routes
-router.param("id",checkID)
-router.route("/").get(getAllTours).post(checkTour,createTour);
+router.param("id", checkID);
+router.route("/").get(getAllTours).post(checkBody, createTour);
 router.route("/:id").get(getTourById).patch(updateTour).delete(deleteTour);
 
 // Export router
