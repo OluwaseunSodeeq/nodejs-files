@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "mongoose": "^5.13.23"
+  },
+  "scripts": {
+    "start:dev": "nodemon server.js",
+    "start:prod": "NODE_ENV=production node server.js"
+  },
+  "name": "mongo-db",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "mongo DB"
+  },
+  "author": "Oluwaseun Sodeeq",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
