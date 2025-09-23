@@ -2,6 +2,8 @@
   "cSpell.words": [
     "ADDINF",
     "ademolaoluwaseun",
+    "avgprice",
+    "avgratings",
     "Brussel",
     "cjkcq",
     "Hass",
@@ -11,7 +13,8 @@
     "PRODUCTNAME",
     "Sodeeq",
     "traversy",
-    "usershandlers"
+    "usershandlers",
+    "virtuals"
   ],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",

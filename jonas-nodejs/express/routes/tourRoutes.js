@@ -6,20 +6,16 @@ import {
   updateTour,
   deleteTour,
   aliasTopTours,
+  getTourStats,
+  getMonthlyPlan,
 } from "../controllers/tourController.js";
 
 // Create router
 const router = express.Router();
 
 router.route("/top-5-cheap").get(aliasTopTours, getAllTours);
-// PARAM MIDDLEWARE
-// router.param("id", (req, res, next, val) => {
-//   console.log(`Tour id is: ${val}`);
-//   next();
-// });
-
-// Define routes
-// router.param("id", checkID);
+router.route("/tour-stats").get(getTourStats);
+router.route("/monthly-plan/:year").get(getMonthlyPlan);
 router.route("/").get(getAllTours).post(createTour);
 router.route("/:id").get(getTourById).patch(updateTour).delete(deleteTour);
 
